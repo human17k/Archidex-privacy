@@ -39,23 +39,19 @@
     }
 
     /* Barre supérieure */
-    <header>
-    <div class="header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-dot"></span>
-        ARCHIDEX
-      </a>
-      <nav style="display: flex; gap: 16px; align-items: center;">
-        <a href="index.html" style="font-size: 0.9rem; font-weight: 600; color: var(--accent); text-decoration: none;">Confidentialité</a>
-        <a href="mentions-legales.html" style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted); text-decoration: none;">Mentions Légales &amp; CGU</a>
-      </nav>
-    </div>
-  </header>
+    header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
     .header-inner {
       max-width: 900px;
       margin: 0 auto;
-      padding: 18px 24px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -80,19 +76,23 @@
       display: inline-block;
     }
 
-    .contact-link {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      padding: 6px 14px;
-      background: var(--accent-soft);
-      border-radius: var(--radius-sm);
-      transition: all 0.2s ease;
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
     }
 
-    .contact-link:hover {
-      background: #dbeafe;
+    nav a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+      font-weight: 600;
     }
 
     /* Conteneur principal */
@@ -149,6 +149,9 @@
     @media (max-width: 640px) {
       .content-wrapper {
         padding: 24px;
+      }
+      nav {
+        gap: 10px;
       }
     }
 
@@ -242,34 +245,53 @@
     }
 
     /* Pied de page */
-    <footer>
-    <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 12px;">
-      <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Politique de confidentialité</a>
-      <span>•</span>
-      <a href="mentions-legales.html" style="color: var(--text-muted); text-decoration: none;">Mentions Légales &amp; CGU</a>
-    </div>
-    <p>© 2026 ARCHIDEX (Société BIOMME) — Tous droits réservés.</p>
-  </footer>
+    footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="header-inner">
-      <a href="https://archidex.fr" class="brand">
+      <a href="index.html" class="brand">
         <span class="brand-dot"></span>
         ARCHIDEX
       </a>
-      <a href="mailto:contact@archidex.fr" class="contact-link">Contact</a>
+      <nav>
+        <a href="index.html" class="active">Confidentialité</a>
+        <a href="mentions-legales.html">Mentions Légales &amp; CGU</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="hero">
-      <span class="badge">Données Personnelles & Vie Privée</span>
+      <span class="badge">Données Personnelles &amp; Vie Privée</span>
       <h1>Politique de Confidentialité</h1>
       <div class="doc-meta">
-        <span>Application & Site Archidex</span>
+        <span>Application &amp; Site Archidex</span>
         <span>•</span>
         <span>Dernière mise à jour : Septembre 2026</span>
       </div>
@@ -434,6 +456,11 @@
   </main>
 
   <footer>
+    <div class="footer-links">
+      <a href="index.html">Politique de confidentialité</a>
+      <span>•</span>
+      <a href="mentions-legales.html">Mentions Légales &amp; CGU</a>
+    </div>
     <p>© 2026 ARCHIDEX (Société BIOMME) — Tous droits réservés.</p>
   </footer>
 
